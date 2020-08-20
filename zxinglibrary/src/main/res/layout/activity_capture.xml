@@ -25,28 +25,36 @@
         <RelativeLayout
             android:id="@+id/headerLayout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/toolBarHeight"
+            android:layout_height="80dp"
             android:layout_gravity="top"
-            android:background="#99000000">
+            android:background="#50000000">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/backIv"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
                 android:padding="6dp"
-                app:srcCompat="@drawable/ic_back" />
+                app:srcCompat="@drawable/icon_close" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/scan_code"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
 
 
         </RelativeLayout>
-
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:background="#50000000"
+            android:textSize="16sp"
+            android:text=""/>
 
         <!-- 扫描取景框 -->
         <com.yzq.zxinglibrary.view.ViewfinderView
@@ -59,36 +67,10 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/bottomLayout"
             android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_height="150dp"
             android:layout_gravity="bottom"
-            android:background="#99000000"
+            android:background="#50000000"
             android:orientation="horizontal">
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/flashLightLayout"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/flashLightIv"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    app:srcCompat="@drawable/ic_close" />
-
-                <TextView
-                    android:id="@+id/flashLightTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:text="@string/open_flash"
-                    android:textColor="#ffffff" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/albumLayout"
                 android:layout_width="0dp"
@@ -99,10 +81,10 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/albumIv"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
                     android:tint="#ffffffff"
-                    app:srcCompat="@drawable/ic_photo" />
+                    app:srcCompat="@drawable/icon_pic" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -110,9 +92,36 @@
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:text="@string/gallery"
-
+                    android:visibility="gone"
                     android:textColor="#ffffff" />
             </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/flashLightLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/flashLightIv"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icon_light_off" />
+
+                <TextView
+                    android:id="@+id/flashLightTv"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/open_flash"
+                    android:textColor="#ffffff" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

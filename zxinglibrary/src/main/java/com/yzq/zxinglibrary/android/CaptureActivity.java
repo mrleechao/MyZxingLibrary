@@ -49,7 +49,7 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
     private SurfaceView previewView;
     private ViewfinderView viewfinderView;
     private AppCompatImageView flashLightIv;
-    private TextView flashLightTv;
+    private TextView flashLightTv,tv_hint;
     private AppCompatImageView backIv;
     private LinearLayoutCompat flashLightLayout;
     private LinearLayoutCompat albumLayout;
@@ -142,6 +142,7 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
         albumLayout = findViewById(R.id.albumLayout);
         albumLayout.setOnClickListener(this);
         bottomLayout = findViewById(R.id.bottomLayout);
+        tv_hint = findViewById(R.id.tv_hint);
 
 
         switchVisibility(bottomLayout, config.isShowbottomLayout());
@@ -155,6 +156,8 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
         } else {
             flashLightLayout.setVisibility(View.GONE);
         }
+
+        tv_hint.setText(""+config.getHintText());
 
     }
 
@@ -183,10 +186,10 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
     public void switchFlashImg(int flashState) {
 
         if (flashState == Constant.FLASH_OPEN) {
-            flashLightIv.setImageResource(R.drawable.ic_open);
+            flashLightIv.setImageResource(R.drawable.icon_light_on);
             flashLightTv.setText(R.string.close_flash);
         } else {
-            flashLightIv.setImageResource(R.drawable.ic_close);
+            flashLightIv.setImageResource(R.drawable.icon_light_off);
             flashLightTv.setText(R.string.open_flash);
         }
 

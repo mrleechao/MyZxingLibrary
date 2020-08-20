@@ -45,6 +45,12 @@ public class ZxingConfig implements Serializable {
     @ColorRes
     private int scanLineColor = R.color.scanLineColor;
 
+    /*提示文字*/
+    private String hintText="";
+
+
+
+    /*底部按钮图片*/
     public int getFrameLineColor() {
         return frameLineColor;
     }
@@ -123,5 +129,13 @@ public class ZxingConfig implements Serializable {
 
     public void setShowAlbum(boolean showAlbum) {
         isShowAlbum = showAlbum;
+    }
+
+    public String getHintText() {
+        return hintText;
+    }
+
+    public void setHintText(String hintText) {
+        this.hintText = hintText;
     }
 }
